@@ -3,16 +3,19 @@
 A FastAPI Contacts Server Simulation
 
 ## Features
-- Functions include:
-  1. Get ALL Contacts
-  2. Get SINGLE Contact
-  3. Post Contact
-  4. Put Contact
-  5. Delete Contact
+- GET /contacts — retrieve all contacts
+- GET /contacts/{id} — retrieve a single contact by ID
+- POST /contacts — create a new contact (Pydantic-validated)
+- PUT /contacts/{id} — update an existing contact
+- DELETE /contacts/{id} — remove a contact
+- Input validation via Pydantic models
+- Auto-generated API docs at /docs (Swagger UI)
 
 ## Tech Stack
 - Python 3.13
-- pandas
+- FastAPI
+- Uvicorn
+- Pydantic
 - uv (package manager)
 
 ## Setup
@@ -24,6 +27,7 @@ uv sync
 
 ## Usage
 \```bash
-uv run python src/main.py
+uv run uvicorn src.main:app --reload
 \```
-Output is displayed on FastAPI demo page.
+Output is displayed on FastAPI demo page
+API available at http://localhost:8000 — interactive docs at http://localhost:8000/docs
